@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf4f2">
+  <meta name="description" content="Kemuso's private, adults-only creator profile featuring original photo sets and films.">
+  <title>Velvet Room — Kemuso's Profile</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="age-screen" id="age-screen" role="dialog" aria-modal="true" aria-labelledby="age-title">
+    <div class="age-card">
+      <video class="age-model-video" autoplay muted loop playsinline preload="metadata" aria-label="Short video of the featured model">
+        <source src="/video/njoki.mp4" type="video/mp4">
+      </video>
+      <span class="eyebrow">VELVET ROOM · CREATOR PROFILE</span>
+      <h1 id="age-title">A space for adults.</h1>
+      <p>This adults-only store contains sensual photography and video. You must be 18 or older to continue.</p>
+      <button class="button button-dark" id="age-confirm">I’m 18 or older <span aria-hidden="true">→</span></button>
+      <a class="age-exit" href="https://www.google.com/">I’m under 18</a>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <a class="wordmark" href="#" aria-label="Velvet Room home"><span class="brand-mark">V</span> velvet room</a>
+    <nav aria-label="Main navigation">
+      <a href="#posts">Profile</a>
+      <a href="#posts">Posts</a>
+    </nav>
+    <a class="top-cta" href="#posts">Browse releases <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="profile-page">
+    <section class="profile-cover" aria-label="Creator cover photo">
+      <img src="/images/cover.png" alt="Kemuso at the beach">
+      <span class="cover-label">VELVET ROOM · NAIROBI</span>
+    </section>
+
+    <section class="creator-profile" aria-labelledby="creator-name">
+      <img class="creator-avatar" src="/images/avatar.png" alt="Kemuso">
+      <div class="creator-details">
+        <div class="creator-title-row">
+          <div>
+            <h1 id="creator-name">Kemuso</h1>
+            <p class="creator-handle">@velvetroom <span aria-hidden="true">·</span> Nairobi, Kenya</p>
+          </div>
+          <span class="creator-badge"><span aria-hidden="true">✓</span> Creator</span>
+        </div>
+        <p class="creator-bio">A private space for original photo sets and films. New releases, personal moments, made for your own time.</p>
+        <div class="creator-stats" aria-label="Creator details">
+          <span><strong id="release-count">3</strong> releases</span>
+          <span>Adults only <strong>18+</strong></span>
+          <span>Secure <strong>M-Pesa</strong></span>
+        </div>
+      </div>
+      <a class="profile-action" href="#posts">View releases <span aria-hidden="true">↓</span></a>
+      <a class="profile-action" href="#posts">Subscribe <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <div class="profile-layout">
+      <section class="profile-feed" id="posts" aria-labelledby="posts-title">
+        <div class="feed-heading">
+          <div>
+            <span class="eyebrow">RELEASES · SUBSCRIPTION</span>
+            <h2 id="posts-title">Choose your access</h2>
+          </div>
+          <div class="feed-filters" role="group" aria-label="Filter releases">
+            <button type="button" class="feed-filter is-active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="feed-filter" data-filter="Photo set" aria-pressed="false">Photos</button>
+            <button type="button" class="feed-filter" data-filter="Video" aria-pressed="false">Videos</button>
+            <button type="button" class="feed-filter" data-filter="subscription" aria-pressed="false">Access</button>
+          </div>
+        </div>
+        <div class="product-grid" id="product-grid" aria-live="polite">
+          <div class="loading-card">Loading payment options…</div>
+        </div>
+      </section>
+
+      <aside class="profile-sidebar" aria-label="About this creator">
+        <section class="sidebar-section">
+          <span class="eyebrow">ABOUT</span>
+          <h2>Just for you.</h2>
+          <p>Explore original releases and enjoy them at your own pace. All content is for adults 18 and over.</p>
+        </section>
+        <section class="sidebar-section sidebar-payment">
+          <span class="eyebrow">PRIVATE CHECKOUT</span>
+          <p>Choose a release to see its price. Pay securely with M-Pesa.</p>
+          <a href="#posts">Browse the feed <span aria-hidden="true">↗</span></a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <a class="wordmark" href="#"><span class="brand-mark">V</span> velvet room</a>
+    <span>Adults only · 18+ · All rights reserved</span>
+    <a href="#posts">Back to profile ↑</a>
+  </footer>
+
+  <dialog class="checkout-dialog" id="checkout-dialog" aria-labelledby="checkout-title">
+    <form method="dialog" class="dialog-close-form"><button class="dialog-close" aria-label="Close">×</button></form>
+    <span class="eyebrow">SECURE CHECKOUT · M-PESA</span>
+    <h2 id="checkout-title">Make it <em>yours.</em></h2>
+    <p class="checkout-item" id="checkout-item"></p>
+    <form id="checkout-form">
+      <label for="phone">M-Pesa phone number</label>
+      <div class="phone-field"><span>🇰🇪 +254</span><input id="phone" name="phone" inputmode="tel" autocomplete="tel-national" placeholder="712 345 678" maxlength="12" required></div>
+      <small>Enter the 9 digits after +254, for example 712 345 678. We’ll send a payment request to your phone.</small>
+      <button class="button button-dark checkout-submit" id="checkout-submit" type="submit">Pay with M-Pesa <span aria-hidden="true">→</span></button>
+    </form>
+    <div class="payment-status" id="payment-status" role="status" aria-live="polite"></div>
+    <div class="payment-assurance">🔒 Secure M-Pesa checkout · Your payment is private</div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
